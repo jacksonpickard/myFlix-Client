@@ -557,14 +557,22 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"d8Dch":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$98a3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$98a3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
-// import React from 'react';
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 const MyFlixApplication = ()=>{
-    return /*#__PURE__*/ React.createElement((0, _mainView.MainView), {
+    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _mainView.MainView), {
         __source: {
             fileName: "src/index.jsx",
             lineNumber: 11,
@@ -577,7 +585,7 @@ const MyFlixApplication = ()=>{
 const container = document.querySelector("#root");
 const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
-root.render(/*#__PURE__*/ React.createElement(MyFlixApplication, {
+root.render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplication, {
     __source: {
         fileName: "src/index.jsx",
         lineNumber: 19,
@@ -586,7 +594,12 @@ root.render(/*#__PURE__*/ React.createElement(MyFlixApplication, {
     __self: undefined
 }));
 
-},{"react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ"}],"lOjBx":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$98a3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("df25da4a2606d341");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
