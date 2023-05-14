@@ -599,7 +599,7 @@ root.render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplica
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react-dom/client":"lOjBx","react":"21dqq","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL","./components/main-view/main-view":"4gflv"}],"lOjBx":[function(require,module,exports) {
+},{"react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","react":"21dqq","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("df25da4a2606d341");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -23949,7 +23949,94 @@ module.exports = require("1559039f526b8fe0");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"lJZlQ":[function() {},{}],"9jqz8":[function(require,module,exports) {
+},{}],"4gflv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f7a6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView);
+var _react = require("react");
+const MainView = ()=>{
+    const [movies, setMovies] = (0, _react.useState)([
+        {
+            id: 1,
+            Title: "The Shawshank Redemption",
+            Description: "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didnt commit the crimes. ",
+            Genre: "Drama",
+            Director: "Frank Darabont",
+            ImageURL: "https://www.imdb.com/title/tt0111161/mediaviewer/rm1690056449/?ref_=tt_ov_i",
+            Year: "1994"
+        },
+        {
+            id: 2,
+            Title: "Fight Club",
+            Description: "A depressed man (Edward Norton) suffering from insomnia meets a strange soap salesman named Tyler Durden (Brad Pitt) and soon finds himself living in his squalid house after his perfect apartment is destroyed.",
+            Genre: "Drama",
+            Director: "David Fincher",
+            ImageURL: "https://www.imdb.com/title/tt0137523/mediaviewer/rm2110056193/?ref_=tt_ov_i",
+            Year: "1999"
+        },
+        {
+            id: 3,
+            Title: "The Lord of the Rings: The Fellowship of the Ring",
+            Description: "The first adventure in The Lord of the Rings trilogy!",
+            Genre: "Adventure",
+            Director: "Peter Jackson",
+            ImageURL: "https://www.imdb.com/title/tt0120737/mediaviewer/rm3592958976/?ref_=tt_ov_i",
+            Year: "2001"
+        }
+    ]);
+    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    if (selectedMovie) return /*#__PURE__*/ React.createElement(MovieView, {
+        movie: selectedMovie,
+        onBackClick: ()=>setSelectedMovie(null),
+        __source: {
+            fileName: "src/components/main-view/main-view.jsx",
+            lineNumber: 38,
+            columnNumber: 13
+        },
+        __self: undefined
+    });
+    if (movies.length === 0) return /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/main-view/main-view.jsx",
+            lineNumber: 43,
+            columnNumber: 16
+        },
+        __self: undefined
+    }, "The list is empty!");
+    return /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/main-view/main-view.jsx",
+            lineNumber: 47,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, movies.map((movie)=>/*#__PURE__*/ React.createElement(MovieCard, {
+            key: movie.id,
+            movie: movie,
+            onMovieClick: (newSelectedMovie)=>{
+                setSelectedMovie(newSelectedMovie);
+            },
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 49,
+                columnNumber: 17
+            },
+            __self: undefined
+        })));
+};
+
+  $parcel$ReactRefreshHelpers$f7a6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}],"9jqz8":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -24576,54 +24663,6 @@ module.exports = require("e7b08ec9359ba3ce");
     exports.setSignature = setSignature;
 })();
 
-},{}],"4gflv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f7a6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView);
-var _react = require("react");
-const MainView = ()=>{
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            Title: "The Shawshank Redemption",
-            Description: "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didnt commit the crimes. ",
-            Genre: "Drama",
-            Director: "Frank Darabont",
-            ImageURL: "https://www.imdb.com/title/tt0111161/mediaviewer/rm1690056449/?ref_=tt_ov_i",
-            Year: "1994"
-        },
-        {
-            id: 2,
-            Title: "Fight Club",
-            Description: "A depressed man (Edward Norton) suffering from insomnia meets a strange soap salesman named Tyler Durden (Brad Pitt) and soon finds himself living in his squalid house after his perfect apartment is destroyed.",
-            Genre: "Drama",
-            Director: "David Fincher",
-            ImageURL: "https://www.imdb.com/title/tt0137523/mediaviewer/rm2110056193/?ref_=tt_ov_i",
-            Year: "1999"
-        },
-        {
-            id: 3,
-            Title: "The Lord of the Rings: The Fellowship of the Ring",
-            Description: "The first adventure in The Lord of the Rings trilogy!",
-            Genre: "Adventure",
-            Director: "Peter Jackson",
-            ImageURL: "https://www.imdb.com/title/tt0120737/mediaviewer/rm3592958976/?ref_=tt_ov_i",
-            Year: "2001"
-        }
-    ]);
-};
-
-  $parcel$ReactRefreshHelpers$f7a6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}]},["5ay96","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{}],"lJZlQ":[function() {},{}]},["5ay96","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

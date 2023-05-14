@@ -29,5 +29,31 @@ export const MainView = () => {
             ImageURL: 'https://www.imdb.com/title/tt0120737/mediaviewer/rm3592958976/?ref_=tt_ov_i',
             Year: '2001'
         }
-    ])
-}
+    ]);
+
+    const [selectedMovie, setSelectedMovie] = useState(null);
+
+    if (selectedMovie) {
+        return (
+            <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
+        );
+    }
+
+    if (movies.length === 0) {
+        return <div>The list is empty!</div>;
+    }
+
+    return (
+        <div>
+            {movies.map((movie) => (
+                <MovieCard
+                    key={movie.id}
+                    movie={movie}
+                    onMovieClick={(newSelectedMovie) => {
+                        setSelectedMovie(newSelectedMovie);
+                    }}
+                />
+            ))}
+        </div>
+    );
+};
