@@ -557,22 +557,14 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"d8Dch":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$98a3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$98a3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
+// import React from 'react';
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 const MyFlixApplication = ()=>{
-    return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _mainView.MainView), {
+    return /*#__PURE__*/ React.createElement((0, _mainView.MainView), {
         __source: {
             fileName: "src/index.jsx",
             lineNumber: 11,
@@ -585,7 +577,7 @@ const MyFlixApplication = ()=>{
 const container = document.querySelector("#root");
 const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
-root.render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplication, {
+root.render(/*#__PURE__*/ React.createElement(MyFlixApplication, {
     __source: {
         fileName: "src/index.jsx",
         lineNumber: 19,
@@ -594,12 +586,7 @@ root.render(/*#__PURE__*/ (0, _reactDefault.default).createElement(MyFlixApplica
     __self: undefined
 }));
 
-  $parcel$ReactRefreshHelpers$98a3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","react":"21dqq","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}],"lOjBx":[function(require,module,exports) {
+},{"react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("df25da4a2606d341");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -23961,6 +23948,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MainView", ()=>MainView);
 var _react = require("react");
 var _movieCard = require("../movie-card/movie-card");
+var _movieView = require("../movie-view/movie-view");
 const MainView = ()=>{
     const [movies, setMovies] = (0, _react.useState)([
         {
@@ -23992,12 +23980,12 @@ const MainView = ()=>{
         }
     ]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    if (selectedMovie) return /*#__PURE__*/ React.createElement(MovieView, {
+    if (selectedMovie) return /*#__PURE__*/ React.createElement((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null),
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 39,
+            lineNumber: 40,
             columnNumber: 13
         },
         __self: undefined
@@ -24005,7 +23993,7 @@ const MainView = ()=>{
     if (movies.length === 0) return /*#__PURE__*/ React.createElement("div", {
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 44,
+            lineNumber: 45,
             columnNumber: 16
         },
         __self: undefined
@@ -24013,7 +24001,7 @@ const MainView = ()=>{
     return /*#__PURE__*/ React.createElement("div", {
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 48,
+            lineNumber: 49,
             columnNumber: 9
         },
         __self: undefined
@@ -24025,7 +24013,7 @@ const MainView = ()=>{
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 17
             },
             __self: undefined
@@ -24037,7 +24025,25 @@ const MainView = ()=>{
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL","../movie-card/movie-card":"bwuIu"}],"9jqz8":[function(require,module,exports) {
+},{"react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}],"bwuIu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+const MovieCard = ({ movie , onMovieClick  })=>{
+    return /*#__PURE__*/ React.createElement("div", {
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        __source: {
+            fileName: "src/components/movie-card/movie-card.jsx",
+            lineNumber: 3,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, movie.title);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8"}],"9jqz8":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -24067,7 +24073,87 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"dMLVL":[function(require,module,exports) {
+},{}],"ggaUx":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView);
+const MovieView = ({ movie , onBackClick  })=>{
+    return /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 3,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 4,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("img", {
+        src: movie.ImageURL,
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 5,
+            columnNumber: 17
+        },
+        __self: undefined
+    })), /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 7,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 8,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "Title: "), /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 9,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, movie.title)), /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 11,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 12,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "Description: "), /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 13,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, movie.description)), /*#__PURE__*/ React.createElement("button", {
+        onClick: onBackClick,
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 15,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, "Back"));
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8"}],"dMLVL":[function(require,module,exports) {
 "use strict";
 var Refresh = require("5fdea25eedd2328");
 function debounce(func, delay) {
@@ -24663,24 +24749,6 @@ module.exports = require("e7b08ec9359ba3ce");
     exports.register = register;
     exports.setSignature = setSignature;
 })();
-
-},{}],"bwuIu":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
-const MovieCard = ({ movie , onMovieClick  })=>{
-    return /*#__PURE__*/ React.createElement("div", {
-        onClick: ()=>{
-            onMovieClick(movie);
-        },
-        __source: {
-            fileName: "src/components/movie-card/movie-card.jsx",
-            lineNumber: 3,
-            columnNumber: 9
-        },
-        __self: undefined
-    }, movie.title);
-};
 
 },{}],"lJZlQ":[function() {},{}]},["5ay96","d8Dch"], "d8Dch", "parcelRequireaec4")
 
