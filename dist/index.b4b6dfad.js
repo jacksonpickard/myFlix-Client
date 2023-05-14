@@ -23960,6 +23960,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MainView", ()=>MainView);
 var _react = require("react");
+var _movieCard = require("../movie-card/movie-card");
 const MainView = ()=>{
     const [movies, setMovies] = (0, _react.useState)([
         {
@@ -23996,7 +23997,7 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null),
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 38,
+            lineNumber: 39,
             columnNumber: 13
         },
         __self: undefined
@@ -24004,7 +24005,7 @@ const MainView = ()=>{
     if (movies.length === 0) return /*#__PURE__*/ React.createElement("div", {
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 43,
+            lineNumber: 44,
             columnNumber: 16
         },
         __self: undefined
@@ -24012,11 +24013,11 @@ const MainView = ()=>{
     return /*#__PURE__*/ React.createElement("div", {
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 47,
+            lineNumber: 48,
             columnNumber: 9
         },
         __self: undefined
-    }, movies.map((movie)=>/*#__PURE__*/ React.createElement(MovieCard, {
+    }, movies.map((movie)=>/*#__PURE__*/ React.createElement((0, _movieCard.MovieCard), {
             key: movie.id,
             movie: movie,
             onMovieClick: (newSelectedMovie)=>{
@@ -24024,7 +24025,7 @@ const MainView = ()=>{
             },
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 17
             },
             __self: undefined
@@ -24036,7 +24037,7 @@ const MainView = ()=>{
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL"}],"9jqz8":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"9jqz8","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"dMLVL","../movie-card/movie-card":"bwuIu"}],"9jqz8":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -24662,6 +24663,24 @@ module.exports = require("e7b08ec9359ba3ce");
     exports.register = register;
     exports.setSignature = setSignature;
 })();
+
+},{}],"bwuIu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+const MovieCard = ({ movie , onMovieClick  })=>{
+    return /*#__PURE__*/ React.createElement("div", {
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        __source: {
+            fileName: "src/components/movie-card/movie-card.jsx",
+            lineNumber: 3,
+            columnNumber: 9
+        },
+        __self: undefined
+    }, movie.title);
+};
 
 },{}],"lJZlQ":[function() {},{}]},["5ay96","d8Dch"], "d8Dch", "parcelRequireaec4")
 
