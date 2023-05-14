@@ -24142,11 +24142,74 @@ const MovieView = ({ movie , onBackClick  })=>{
             columnNumber: 17
         },
         __self: undefined
-    }, movie.description)), /*#__PURE__*/ React.createElement("button", {
-        onClick: onBackClick,
+    }, movie.description)), /*#__PURE__*/ React.createElement("div", {
         __source: {
             fileName: "src/components/movie-view/movie-view.jsx",
             lineNumber: 15,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 16,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "Genre: "), /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 17,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, movie.genre)), /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 19,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 20,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "Director: "), /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 21,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, movie.director)), /*#__PURE__*/ React.createElement("div", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 23,
+            columnNumber: 13
+        },
+        __self: undefined
+    }, /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 24,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, "Year: "), /*#__PURE__*/ React.createElement("span", {
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 25,
+            columnNumber: 17
+        },
+        __self: undefined
+    }, movie.year)), /*#__PURE__*/ React.createElement("button", {
+        onClick: onBackClick,
+        __source: {
+            fileName: "src/components/movie-view/movie-view.jsx",
+            lineNumber: 27,
             columnNumber: 13
         },
         __self: undefined
