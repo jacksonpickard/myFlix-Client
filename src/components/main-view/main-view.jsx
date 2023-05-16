@@ -10,7 +10,7 @@ export const MainView = () => {
             Description: 'Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didnt commit the crimes. ',
             Genre: 'Drama',
             Director: 'Frank Darabont',
-            ImageURL: 'https://www.imdb.com/title/tt0111161/mediaviewer/rm1690056449/?ref_=tt_ov_i',
+            ImageURL: 'https://www.themoviedb.org/t/p/original/tNf2OIGrOfHh4j3VvMvKceIDoix.jpg',
             Year: '1994'
         },
         {
@@ -19,7 +19,7 @@ export const MainView = () => {
             Description: 'A depressed man (Edward Norton) suffering from insomnia meets a strange soap salesman named Tyler Durden (Brad Pitt) and soon finds himself living in his squalid house after his perfect apartment is destroyed.',
             Genre: 'Drama',
             Director: 'David Fincher',
-            ImageURL: 'https://www.imdb.com/title/tt0137523/mediaviewer/rm2110056193/?ref_=tt_ov_i',
+            ImageURL: 'https://www.themoviedb.org/t/p/original/wlmGPHDbnOK4AwL37m6tegxO8A3.jpg',
             Year: '1999'
         },
         {
@@ -28,7 +28,7 @@ export const MainView = () => {
             Description: 'The first adventure in The Lord of the Rings trilogy!',
             Genre: 'Adventure',
             Director: 'Peter Jackson',
-            ImageURL: 'https://www.imdb.com/title/tt0120737/mediaviewer/rm3592958976/?ref_=tt_ov_i',
+            ImageURL: 'https://www.themoviedb.org/t/p/original/mm1NV8GdBvlzI1xI590p3CvJMOJ.jpg',
             Year: '2001'
         }
     ]);
