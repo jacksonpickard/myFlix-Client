@@ -11,12 +11,12 @@ export const MainView = () => {
         fetch("https://jacksons-movie-api.herokuapp.com/")
         .then(( response) => response.json())
         .then((data) => {
-            const moviesFromApi = data.docs.map((doc) => {
+            const moviesFromApi = data.map((movie) => {
                 return {
-                    id: doc.key,
-                    Title: doc.Title,
-                    Image: `https://covers.openlibrary.org/b/id/${doc.cover_i}-L.jpg`,
-                    Director: doc.Director
+                    id: movie.key,
+                    Title: movie.Title,
+                    ImageURL: movie.ImageURL,
+                    Director: movie.Director
                 };
             });
 
