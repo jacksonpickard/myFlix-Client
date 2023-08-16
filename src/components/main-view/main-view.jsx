@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import MovieCard from './MovieCard';
-import MovieView from './MovieView';
+import MovieCard from '../movie-card/movie-card';
+import MovieView from '../movie-view/movie-view';
 import LoginView from '../login/login';
-import SignInView from '../signIn/signIn';
+import SignInView from '../SignIn/SignIn';
 import { Row, Col, Container, Navbar, Button, Image } from 'react-bootstrap';
 import "../../index.scss"
 
