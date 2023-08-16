@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard';
 import MovieView from './MovieView';
-import LoginView from './LoginView';
-import SignupView from './SignupView';
-import { Row } from 'react-bootstrap/Row';
-import { Col } from 'react-bootstrap/Col';
+import LoginView from '../login/login';
+import SignInView from '../signIn/signIn';
+import { Row, Col, Container, Navbar, Button, Image } from 'react-bootstrap';
+import "../../index.scss"
+
 
 function MainView() {
     const storedToken = localStorage.getItem("token");
