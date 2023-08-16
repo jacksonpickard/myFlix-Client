@@ -1,87 +1,97 @@
-import{ useState } from "react";
+import React from "react"
+import { useState } from "react"
+import { Form, Button } from "react-bootstrap"
 
-export const SignupView = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthday, setBirthday] = useState("");
+export const SignInView = () => {
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [birth, SetDateOfBirth] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
 
-    const data = {
-      username: username,
-      password: password,
-      email: email,
-      birthday: birthday
+    registerSubmitHandler = (event) => {
+        event.preventDefault();
+
+        const reqBody = {
+            userName: userName,
+            password: password,
+            email: email,
+            birth: birth
+        }
+
+        fetch("https://jacksons-movie-api.herokuapp.com/register", {
+            method: "POST",
+            body: JSON.stringify(reqBody),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response) => {
+            if (response.status == 200) {
+                alert("Signup successful");
+                window.location.reload();
+            } else {
+                alert("Unable to register. Please check your credentials.");
+            }
+        }).catch(e => {
+            console.log("error: ", e)
+        });
     };
 
-    fetch("https://jacksons-movie-api.herokuapp.com/users", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then((response) => {
-      if (response.ok) {
-        alert("Signup successful");
-        window.location.reload();
-      } else {
-        return response.json(); // if the response is not ok, try to parse it as json
-      }
-    })
-    .then((data) => {
-      if (data) { // if the response was not ok and could be parsed as json
-        console.error("Signup failed:", data); // print out the parsed error message
-        alert("Signup failed once again");
-      }
-    })
-    .catch((error) => {
-        console.error("An error occurred:", error);
-      });
-    }
-  
+
     return (
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            minLength="3"
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Birthday:
-          <input
-            type="date"
-            value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    );
-  }; 
+        <>
+            <div className="signIn">
+                <Form className="p-5" onSubmit={registerSubmitHandler}>
+                    <h3>Sign In</h3>
+                    <Form.Group controlId="signupUsername">
+                        <Form.Label className="text-lg mt-3">
+                            Username: </Form.Label>
+                        <Form.Control className={"bg-light"}
+                            type="text"
+                            value={userName}
+                            onChange={(e) => setUserName(e.target.value)}
+                            required
+                            minLength="5"
+                            size="lg"
+                        />
+
+                    </Form.Group>
+                    <Form.Group controlId="signupPassword">
+                        <Form.Label className="text-lg mt-3">Password:</Form.Label>
+                        <Form.Control className={"bg-light"}
+                            type="password"
+                            size="lg"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            minLength="6"
+                        />
+
+                    </Form.Group>
+                    <Form.Group controlId="signupEmail">
+                        <Form.Label className="text-lg mt-3">Email:</Form.Label>
+                        <Form.Control className={"bg-light"}
+                            type="email"
+                            size="lg"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="birth">
+                        <Form.Label className="text-lg mt-3"> DateOfBirth:</Form.Label>
+                        <Form.Control className={"bg-light"}
+                            type="date"
+                            size="lg"
+                            value={birth}
+                            onChange={(e) => SetDateOfBirth(e.target.value)}
+                            required
+                        />
+                    </Form.Group>
+                    <Button className="mt-2" type="submit">Submit</Button>
+                </Form >
+            </div >
+        </>
+    )
+
+}
