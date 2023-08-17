@@ -7,7 +7,7 @@ import { Row, Col, Container, Navbar, Button, Image } from 'react-bootstrap';
 import "../../index.scss"
 
 
-function MainView() {
+export const MainView = () => {
     const storedToken = localStorage.getItem("token");
     const storedUser = JSON.parse(localStorage.getItem("user"));
 	  const [movies, setMovies] = useState([]);
